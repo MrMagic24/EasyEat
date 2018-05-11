@@ -12,9 +12,9 @@ public class Dish {
 
     @PrimaryKey(autoGenerate = true)
     private int id;
-
-    private String name;
     private String recipe;
+    private String name;
+
     private String ingredients;
 
     public Dish(String name, String recipe, String ingredients) {
