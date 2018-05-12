@@ -45,7 +45,9 @@ public class MainActivity extends Activity {
 
         listMenu.setOnItemClickListener(itemClickListener);
 
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(), AppDatabase.class, "dishDB").allowMainThreadQueries().build();
+        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
+                AppDatabase.class,
+                "dishDB").allowMainThreadQueries().build();
         DishDao dishDao = db.dishDao();
 
         StartInsertDish(db);

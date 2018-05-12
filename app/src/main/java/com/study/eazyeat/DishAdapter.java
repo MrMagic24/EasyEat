@@ -1,6 +1,7 @@
 package com.study.eazyeat;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -17,11 +18,14 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.ViewHolder> {
 
     @Override
     public DishAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        return null;
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.dish_row, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(DishAdapter.ViewHolder holder, int position){}
+    public void onBindViewHolder(DishAdapter.ViewHolder holder, int position){
+
+    }
 
     @Override
     public int getItemCount(){
@@ -30,10 +34,14 @@ public class DishAdapter extends RecyclerView.Adapter<DishAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         public TextView name;
+        public TextView recipe;
+        public TextView ingredients;
 
         public ViewHolder(View itemView){
             super(itemView);
             name = itemView.findViewById(R.id.name);
+            recipe = itemView.findViewById(R.id.recipe);
+            ingredients = itemView.findViewById(R.id.ingredients);
         }
     }
 
