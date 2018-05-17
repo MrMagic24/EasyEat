@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">EazyEat</string>
-    <string name="action_settings">Settings</string>
+    <string name="dish">Блюдо</string>
+    <string name="action_settings">Настройки</string>
+    <string name="dish_recipe">Рецепт</string>
+    <string name="dish_ingredients">Ингредиенты</string>
     <string name="new_dish">Новое блюдо</string>
+    <string name="title_activity_list_dishes">Список блюд</string>
     <string name="action_make_dish">Создать блюдо</string>
     <string name="title_activity_make_dish">MakeDishActivity</string>
     <string-array name="main_items">

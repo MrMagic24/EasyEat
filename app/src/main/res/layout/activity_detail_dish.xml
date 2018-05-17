@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.DetailDishActivity">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        tools:context=".Activity.MakeDishActivity">
+
+        <TextView
+            android:id="@+id/dish_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_dish"
+            android:gravity="center"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:id="@+id/dish_recipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dish_recipe"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:paddingTop="30dp"/>
+
+        <TextView
+            android:id="@+id/dish_recipe_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_dish"
+            android:gravity="left"/>
+
+        <TextView
+            android:id="@+id/dish_ingridients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dish_ingredients"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:paddingTop="30dp"/>
+
+        <TextView
+            android:id="@+id/dish_ingridients_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/new_dish"
+            android:gravity="left"/>
+
+        <!--<android.support.design.widget.TextInputLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content">-->
+
+        <!--<android.support.design.widget.TextInputEditText-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="Name"/>-->
+        <!--</android.support.design.widget.TextInputLayout>-->
+
+
+    </LinearLayout>
+</ScrollView>

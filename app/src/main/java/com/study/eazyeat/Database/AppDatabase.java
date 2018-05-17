@@ -1,4 +1,4 @@
-package com.study.eazyeat;
+package com.study.eazyeat.Database;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.RoomDatabase;

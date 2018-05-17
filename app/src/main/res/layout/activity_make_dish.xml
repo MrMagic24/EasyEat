@@ -10,7 +10,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="24dp"
-    tools:context=".MakeDishActivity">
+    tools:context=".Activity.MakeDishActivity">
 
     <TextView
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="textMultiLine"
-        android:hint="Рецепт"
+        android:hint="@string/dish_recipe"
         android:lines="5"/>
 
     <EditText
@@ -38,16 +38,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:inputType="textMultiLine"
-        android:hint="Ингридиенты"
+        android:hint="@string/dish_ingredients"
         android:lines="5"/>
 
     <Button
         android:id="@+id/button_make_dish"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="@string/action_make_dish"/>
+        android:text="@string/action_make_dish"
+        android:onClick="onButtonClick"/>
 
     <!--<android.support.design.widget.TextInputLayout-->
         <!--android:layout_width="match_parent"-->

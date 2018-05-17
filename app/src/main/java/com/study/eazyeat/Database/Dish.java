@@ -1,4 +1,4 @@
-package com.study.eazyeat;
+package com.study.eazyeat.Database;
 
         import android.arch.persistence.room.Entity;
         import android.arch.persistence.room.PrimaryKey;

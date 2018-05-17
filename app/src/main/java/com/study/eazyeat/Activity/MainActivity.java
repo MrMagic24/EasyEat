@@ -1,9 +1,7 @@
-package com.study.eazyeat;
+package com.study.eazyeat.Activity;
 
 import android.app.Activity;
-import android.arch.persistence.room.Room;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
@@ -11,11 +9,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.List;
+import com.study.eazyeat.R;
 
 public class MainActivity extends Activity {
-
-    private static final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,23 +30,22 @@ public class MainActivity extends Activity {
                                             long id) {
                         //Pass the drink the user clicks on to DrinkActivity
                         if (id == 0) {
-                            Log.d(TAG, "onClick idButton: " + id);
                             Intent intent = new Intent(MainActivity.this, MakeDishActivity.class);
                             startActivity(intent);
                         }
+
+                        if (id == 1){
+                            Intent intentlist = new Intent(MainActivity.this, ListDishesActivity.class);
+                            startActivity(intentlist);
+                        }
                     }
                 };
+        listMenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        //Assign the listener to the list view
-
-        listMenu.setOnItemClickListener(itemClickListener);
-
-        AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                AppDatabase.class,
-                "dishDB").allowMainThreadQueries().build();
-        DishDao dishDao = db.dishDao();
-
-        StartInsertDish(db);
+            }
+        });
     }
 
     @Override
@@ -65,30 +60,15 @@ public class MainActivity extends Activity {
         switch (item.getItemId()){
             case R.id.action_make_dish:
                 //
-                Intent intent = new Intent(this, MakeDishActivity.class);
-                startActivity(intent);
+                Intent intentmake = new Intent(this, MakeDishActivity.class);
+                startActivity(intentmake);
                 return true;
             case R.id.action_settings:
                 //
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public void StartInsertDish(AppDatabase db){
-        List<Dish> listDish = db.dishDao().getAllDish();
-
-        if (listDish.size() == 0){
-            Dish dish = new Dish("Пирог с яблоком", "Пирог с яблоком", "Яблоко яблоко");
-            Dish dish2 = new Dish("Пирог с вишней", "Приготовить пирог в духовке", "Тесто, вишня, прямые руки");
-            Dish dish3 = new Dish("Пирог с апельсином", "Приготовить пирог в печи", "Апельсин, тесто");
-
-            db.dishDao().InsertAll(dish, dish2, dish3);
-
-            Log.d(TAG, "Dish name: " + dish.getName().toString());
-            Log.d(TAG, "Dish name: " + dish2.getName().toString());
-            Log.d(TAG, "Dish name: " + dish3.getName().toString());
         }
     }
 }
